@@ -1,0 +1,26 @@
+// Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Введите значение M: ");
+        int M = int.Parse(Console.ReadLine());
+
+        Console.Write("Введите значение N: ");
+        int N = int.Parse(Console.ReadLine());
+
+        int sum = GetSumOfNaturalNumbers(M, N);
+        Console.WriteLine($"Сумма натуральных чисел от {M} до {N}: {sum}");
+    }
+
+    static int GetSumOfNaturalNumbers(int start, int end)
+    {
+        if (start > end)
+            return 0;
+
+        return start + GetSumOfNaturalNumbers(start + 1, end);
+    }
+}
